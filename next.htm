@@ -110,16 +110,33 @@
 </footer>
 <script type="text/javascript">
   //tabbed pannels
+  //declare globals to hold all the links and panel elements
+  var tabLinks;
+  var tabPanels;
   window.onload = function() {
-    //set initial pannel state
-    //listen for clicks on tabs
-
+    //when the page laods it grabs the li elements
+    tabLinks = document.getElementByID("tabs").getElementsByTagName("li");
+    //now get all the divs to store in tabpanels
+    tabPanels = document.getElementByID("containers").getElementsByTagName("div");
+    //activate the first One
+    displayPanel(tabLinks[0]);
+    //attach event listeners to links using onclick and onfocus
+    for (var i = 0; i < tabLinks.length; i++) {
+      tabLinks[i].onclick = function() {
+        displayPanel(this);
+        return false;
+      }
+      tabLinks.onfocus() {
+        displayPanel(this);
+        return false;
+      }
+    }
   }
 
-  function displayPannel() {
+  function displayPanel() {
     //respond to tab clicks
-    //change pannel display and activate tabs
-    
+    //change panel display and activate tabs
+
   }
 </script>
 </body>
