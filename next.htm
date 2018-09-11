@@ -133,10 +133,18 @@
     }
   }
 
-  function displayPanel() {
-    //respond to tab clicks
-    //change panel display and activate tabs
-
+  function displayPanel(tabToActivate) {
+    //go through all li elements
+    for (var i = 0; i < tabLinks.length; i++) {
+      if (tabLinks[i] == tabToActivate) {
+        tabLinks[i].classList.add("active");
+        tabPanels[i].style.display = "block";
+      }
+      else {
+        tabLinks[i].classList.remove("active");
+        tabPanels[i].style.display = "none";
+      }
+    }
   }
 </script>
 </body>
